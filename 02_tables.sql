@@ -1,1 +1,2 @@
-.tables
+
+SELECT * FROM transacao_produto;
