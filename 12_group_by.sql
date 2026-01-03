@@ -28,3 +28,15 @@ SELECT idCliente,
 
    ORDER BY sum(QtdePontos) DESC
 LIMIT 5;
+
+----------------------------------------
+SELECT 
+   IdCliente,
+   sum(QtdePontos) AS TotalPontos   
+FROM transacoes
+WHERE DtCriacao >= '2024-01-01'
+  AND DtCriacao < '2024-03-01'  
+GROUP BY IdCliente
+HAVING sum(QtdePontos) > 0
+ORDER BY sum(QtdePontos) DESC
+LIMIT 10;
