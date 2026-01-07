@@ -1,2 +1,1 @@
-
-SELECT * FROM transacao_produto;
+.tables
