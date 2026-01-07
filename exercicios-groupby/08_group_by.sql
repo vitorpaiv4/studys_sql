@@ -1,7 +1,9 @@
 -- Qual o produto com mais pontos transacionados?
 SELECT 
-    IdTransacao,
-    sum(QtdePontos) AS TotalPontos
-FROM transacoes
-GROUP BY IdTransacao
+    IdProduto,
+    sum(vlProduto * QtdeProduto) AS TotalPontos,
+    sum(QtdeProduto) AS TotalQuantidade
+FROM transacao_produto
+GROUP BY IdProduto
 ORDER BY TotalPontos DESC
+LIMIT 1;

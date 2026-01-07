@@ -1,7 +1,8 @@
 --Qual o produto mais transacionado?
 SELECT 
-    IdTransacao,
-    count(DISTINCT IdTransacao) AS Quantidade_Transacoes
-FROM transacoes
-GROUP BY IdProuto
+    IdProduto,
+    COUNT(*) AS Quantidade_Transacoes
+FROM transacao_produto
+GROUP BY IdProduto
 ORDER BY Quantidade_Transacoes DESC
+LIMIT 1;
